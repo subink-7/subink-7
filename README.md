@@ -2,7 +2,7 @@
 <h3 align="center">Full-Stack Developer | React & Next.js | Node.js | Python & Django | From Nepal 🇳🇵</h3>
 
 <p align="center">
-  <a href="https://ingskill.com"><b>Portfolio</b></a> &nbsp;•&nbsp;
+  <a href="https://subinkhadka.com.np/"><b>Portfolio</b></a> &nbsp;•&nbsp;
   <a href="https://www.linkedin.com/in/subin-khadka-675b52237/"><b>LinkedIn</b></a>
 </p>
 
