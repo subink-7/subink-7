@@ -1,95 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subin Khadka | Personal Website</title>
-    <h1>ma hero ho k babu</h1>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            max-width: 450px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            display: block;
-            background: #3498db;
-            color: #ffffff;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #2980b9;
-        }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #bdc3c7;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Full-stack developer</title>
+<meta name="description" content="Mid-level full-stack developer building web apps with React, Next.js, Node.js and Django.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h1>Subin Khadka</h1>
-        <p>Welcome to my personal corner of the internet! I am currently hosting this site on GitHub Pages using my .com.np domain.</p>
-        
-        <div class="links">
-            <a href="https://github.com/" target="_blank" class="btn">GitHub Profile</a>
-            <a href="https://linkedin.com/" target="_blank" class="btn">Connect on LinkedIn</a>
-            <a href="mailto:your-email@example.com" class="btn">Contact Me</a>
-        </div>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Your Name</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a class="btn small" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="footer">
-            &copy; 2026 Subin Khadka. All Rights Reserved.
-        </div>
+<main id="main">
+  <section class="hero wrap" id="top">
+    <div class="hero-copy">
+      <p class="status"><span></span>Open to mid-level developer roles</p>
+      <h1>Hi, I’m Your Name. I build web apps from the browser to the database.</h1>
+      <p class="lede">Mid-level full-stack developer with [X] years of experience shipping React and Next.js front ends on top of Node.js and Django back ends.</p>
+      <div class="actions">
+        <a class="btn" href="#work">See my work</a>
+        <a class="btn ghost" href="your-cv.pdf" download>Download CV</a>
+      </div>
     </div>
 
+    <ol class="flow" aria-label="How a request travels through my stack">
+      <li><b>Next.js and React</b><span>Pages, forms and state the visitor touches</span></li>
+      <li><b>Node.js API</b><span>Routes, validation and business logic</span></li>
+      <li><b>Django</b><span>Models, auth and admin</span></li>
+      <li><b>Database</b><span>Where the data lives</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap section" id="work">
+    <h2>Selected work</h2>
+    <div class="projects">
+      <article class="card feature">
+        <h3>Project one name</h3>
+        <p>One sentence on what it does, who uses it, and the result (for example: cut form processing time by 40%).</p>
+        <p class="role">My role: [what you built personally]</p>
+        <ul class="tags"><li>Next.js</li><li>Node.js</li><li>Django</li></ul>
+        <p class="links"><a href="#">Live site</a><a href="#">Source code</a><a href="#">Case study</a></p>
+      </article>
+      <article class="card">
+        <h3>Project two name</h3>
+        <p>What problem it solves and the one technical decision you are proud of.</p>
+        <p class="role">My role: [your part]</p>
+        <ul class="tags"><li>React</li><li>REST API</li></ul>
+        <p class="links"><a href="#">Live site</a><a href="#">Source code</a></p>
+      </article>
+      <article class="card">
+        <h3>Project three name</h3>
+        <p>What problem it solves and the one technical decision you are proud of.</p>
+        <p class="role">My role: [your part]</p>
+        <ul class="tags"><li>Django</li><li>Python</li></ul>
+        <p class="links"><a href="#">Live site</a><a href="#">Source code</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap section" id="stack">
+    <h2>What I work with</h2>
+    <div class="stack">
+      <div><h3>Front end</h3><ul><li>React</li><li>Next.js</li><li>JavaScript and TypeScript</li><li>HTML and CSS</li></ul></div>
+      <div><h3>Back end</h3><ul><li>Node.js and Express</li><li>Python and Django</li><li>REST APIs</li><li>Authentication</li></ul></div>
+      <div><h3>Tools</h3><ul><li>Git and GitHub</li><li>Testing</li><li>Deployment</li><li>Code review</li></ul></div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="experience">
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li>
+        <time>2023 to now</time>
+        <h3>Job title, Company name</h3>
+        <p>Two lines on what you owned and the outcome. Mention team size and the stack.</p>
+      </li>
+      <li>
+        <time>2021 to 2023</time>
+        <h3>Previous title, Company name</h3>
+        <p>Two lines on what you owned and the outcome.</p>
+      </li>
+      <li>
+        <time>2017 to 2021</time>
+        <h3>Degree, University name</h3>
+        <p>Your field of study and anything relevant.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap section about" id="about">
+    <h2>About me</h2>
+    <p>Write three or four sentences: how you got into development, what kind of products you enjoy building, and how you like to work with a team. Keep it human and specific.</p>
+  </section>
+
+  <section class="wrap section contact" id="contact">
+    <h2>Let’s work together</h2>
+    <p>I’m looking for a mid-level developer role. The quickest way to reach me is email.</p>
+    <a class="mail" href="mailto:you@yourdomain.com">you@yourdomain.com</a>
+    <p class="links"><a href="https://github.com/yourname">GitHub</a><a href="https://linkedin.com/in/yourname">LinkedIn</a></p>
+  </section>
+</main>
+
+<footer class="wrap foot">© 2026 Your Name. Built with plain HTML and CSS.</footer>
 </body>
 </html>
