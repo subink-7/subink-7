@@ -4,395 +4,302 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Subin Khadka — Full-Stack Software Engineer</title>
-  <meta name="description" content="Subin Khadka — Full-Stack Software Engineer. React, Next.js, Node.js, Django. Based in Kathmandu, Nepal.">
+  <meta name="description" content="Subin Khadka is a full-stack software engineer in Kathmandu, Nepal, building web apps with React, Next.js, Node.js and Django.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Audio context init overlay -->
-  <div class="audio-overlay" id="audioOverlay">
-    <div class="pixel-box center">
-      <h2 class="glitch">PRESS ANY KEY TO BOOT SYSTEM</h2>
-      <p class="mute-hint">Sound: ON <span id="muteStatus">🔊</span> — Click MUTE to silence</p>
-    </div>
-  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Subin Khadka</a>
 
-  <!-- XP Bar -->
-  <div class="xp-container">
-    <div class="xp-bar">
-      <div class="xp-fill" id="xpFill"></div>
-      <span class="xp-text" id="xpText">LEVEL 1 — 0%</span>
-    </div>
-  </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="menu-toggle-label">Menu</span>
+      </button>
 
-  <!-- Header / Quest Map -->
-  <header class="header" id="header">
-    <div class="wrap">
-      <div class="nav-grid">
-        <a class="brand" href="#home">SUBIN KHADKA</a>
-        <nav class="quest-map" aria-label="Main navigation">
-          <a href="#home">HOME</a>
-          <a href="#quests">QUESTS</a>
-          <a href="#skills">SKILL TREE</a>
-          <a href="#achievements">ACHIEVEMENTS</a>
-          <a href="#lore">LORE</a>
-          <a class="btn-summon" href="#summon">SUMMON</a>
-        </nav>
-        <button class="mute-btn" id="muteBtn" title="Toggle sound">🔊</button>
-      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- HERO / CHARACTER CARD -->
-    <section class="hero" id="home">
-      <div class="wrap hero-grid">
-        <div class="character-card">
-          <div class="sprite-placeholder" id="sprite">⚔️</div>
-          <div class="char-stats">
-            <h1 class="char-name">Subin Khadka</h1>
-            <p class="char-title">Full-Stack Software Engineer</p>
-            <p class="char-loc">📍 Kathmandu, Nepal</p>
-            <div class="char-level">
-              <span>LVL</span>
-              <span id="charLevel">1</span>
-            </div>
-          </div>
-          <div class="char-actions">
-            <a href="#quests" class="btn-pixel btn-primary">VIEW QUESTS</a>
-            <a href="SUBIN%20KHADKA.CV%20.pdf" download class="btn-pixel btn-ghost">DOWNLOAD CV</a>
-          </div>
-        </div>
-
-        <div class="hero-copy">
-          <p class="status-badge">⚡ SYSTEM ONLINE</p>
-          <h2>I build scalable, end-to-end web systems.</h2>
-          <p class="lede">Versatile Full-Stack Software Engineer experienced in building production-grade solutions with React, Next.js, Node.js, and Django. Server-side rendering, secure authentication, reactive interfaces — clean code and reliable architecture.</p>
-          <div class="stack-badges">
-            <span class="badge">React</span>
-            <span class="badge">Next.js</span>
-            <span class="badge">Node.js</span>
-            <span class="badge">Django</span>
-            <span class="badge">TypeScript</span>
-            <span class="badge">PostgreSQL</span>
-            <span class="badge">MySQL</span>
-            <span class="badge">Docker</span>
-          </div>
+    <!-- Intro -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <p class="hero-location">Kathmandu, Nepal</p>
+        <h1>Subin Khadka</h1>
+        <p class="hero-role">Full-Stack Software Engineer</p>
+        <p class="hero-summary">
+          I build web applications from the database to the browser, using React, Next.js, Node.js and Django.
+          My work covers secure login, real-time features and clean, reliable code.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">See my projects</a>
+          <a class="btn btn-secondary" href="SUBIN%20KHADKA.CV%20.pdf" download>Download CV</a>
+          <a class="btn btn-link" href="mailto:khadkasubin78@gmail.com">Email me</a>
         </div>
       </div>
     </section>
 
-    <!-- QUESTS / PROJECTS -->
-    <section class="section" id="quests">
-      <div class="wrap">
-        <h2 class="section-title"><span class="icon">📜</span> Quest Log</h2>
-        <p class="section-sub">Completed missions and deployed systems.</p>
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <p class="section-intro">A selection of work I built for employers and on my own.</p>
 
-        <div class="quest-filters">
-          <button class="filter-btn active" data-filter="all">ALL</button>
-          <button class="filter-btn" data-filter="office">OFFICE CLIENT WORK</button>
-          <button class="filter-btn" data-filter="personal">PERSONAL / LOCAL BUILD</button>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="work" aria-pressed="false">Work</button>
+          <button type="button" class="filter" data-filter="personal" aria-pressed="false">Personal</button>
         </div>
 
-        <div class="quest-grid" id="questGrid">
-          <!-- Office: InTalent -->
-          <article class="quest-card office" data-filter="office">
-            <div class="quest-header">
-              <span class="quest-type">OFFICE</span>
-              <span class="quest-difficulty">⭐⭐⭐⭐⭐</span>
-            </div>
-            <h3 class="quest-title">InTalent — Talent &amp; Hiring Platform</h3>
-            <p class="quest-desc">Architected and developed Nepal’s first assessment-based hiring and talent platform. Employer-designed skill assessments, automated certification tracking, and a dynamic job marketplace matching verified talent with employers.</p>
-            <ul class="quest-stack">
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project" data-category="work">
+            <p class="project-tag">Work</p>
+            <h3>InTalent: hiring and talent platform</h3>
+            <p>Nepal’s first assessment-based hiring platform. Employers create skill tests, certificates are tracked automatically, and a job board matches verified candidates with employers.</p>
+            <ul class="tech">
               <li>Node.js</li><li>React</li><li>PostgreSQL</li><li>JWT</li><li>RBAC</li>
             </ul>
-            <div class="quest-links">
-              <a href="https://intalentnepal.com/" target="_blank" rel="noopener" class="btn-pixel small">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://intalentnepal.com/" target="_blank" rel="noopener">Visit live site</a>
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Office: Event Tracking System -->
-          <article class="quest-card office" data-filter="office">
-            <div class="quest-header">
-              <span class="quest-type">OFFICE</span>
-              <span class="quest-difficulty">⭐⭐⭐⭐</span>
+          <article class="project" data-category="work">
+            <p class="project-tag">Work</p>
+            <h3>Bus attendance and QR ticketing system</h3>
+            <p>Tracks buses in real time and records attendance automatically. Hardware (ESP32, RFID, GPS, GSM) sends data to a Node.js backend, and the web app updates every 5 seconds. Includes QR tickets that are checked instantly.</p>
+            <ul class="tech">
+              <li>ESP32</li><li>WebSockets</li><li>Node.js</li><li>JWT</li><li>RBAC</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <h3 class="quest-title">Event Tracking System</h3>
-            <p class="quest-desc">A full-stack Event Tracking web application to track events and receive notifications for upcoming events.</p>
-            <ul class="quest-stack">
+          </article>
+
+          <article class="project" data-category="work">
+            <p class="project-tag">Work</p>
+            <h3>Event tracking system</h3>
+            <p>A web app for tracking events and sending notifications about upcoming ones.</p>
+            <ul class="tech">
               <li>React</li><li>Node.js</li><li>WebSockets</li><li>REST APIs</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Office: Bus Attendance / QR Ticketing (ING Skill) -->
-          <article class="quest-card office" data-filter="office">
-            <div class="quest-header">
-              <span class="quest-type">OFFICE</span>
-              <span class="quest-difficulty">⭐⭐⭐⭐⭐</span>
-            </div>
-            <h3 class="quest-title">Bus Attendance &amp; QR Ticketing System</h3>
-            <p class="quest-desc">4-layer architecture (Hardware → Communication → Backend → Frontend) integrating ESP32, RFID, GPS, and GSM. Real-time tracking via WebSockets (5-second updates). Live location tracking and automated attendance logging. Dynamic QR Ticketing with real-time validation.</p>
-            <ul class="quest-stack">
-              <li>ESP32</li><li>WebSockets</li><li>JWT</li><li>RBAC</li><li>Node.js</li>
-            </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
-            </div>
-          </article>
-
-          <!-- Personal: E-commerce Thrift -->
-          <article class="quest-card personal" data-filter="personal">
-            <div class="quest-header">
-              <span class="quest-type">PERSONAL</span>
-              <span class="quest-local">💾 LOCAL</span>
-            </div>
-            <h3 class="quest-title">Next.js E-commerce Thrift Platform</h3>
-            <p class="quest-desc">A modern full-stack e-commerce web application for a curated fashion wear thrift shop. Seamless online shopping experience with product browsing and checkout.</p>
-            <ul class="quest-stack">
+          <article class="project" data-category="personal">
+            <p class="project-tag">Personal</p>
+            <h3>Thrift store e-commerce site</h3>
+            <p>An online shop for a curated fashion thrift store, with product browsing and checkout.</p>
+            <ul class="tech">
               <li>Next.js</li><li>Tailwind CSS</li><li>Node.js</li><li>Wix API</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Personal: Futsal Booking -->
-          <article class="quest-card personal" data-filter="personal">
-            <div class="quest-header">
-              <span class="quest-type">PERSONAL</span>
-              <span class="quest-local">💾 LOCAL</span>
-            </div>
-            <h3 class="quest-title">Futsal Booking System</h3>
-            <p class="quest-desc">Final year academic project. A full-featured digital reservation and pitch management platform to automate futsal court bookings and eliminate scheduling conflicts.</p>
-            <ul class="quest-stack">
-              <li>React</li><li>Node.js</li><li>Django</li><li>SQL/NoSQL</li>
+          <article class="project" data-category="personal">
+            <p class="project-tag">Personal</p>
+            <h3>Futsal booking system</h3>
+            <p>My final-year university project. Players book futsal courts online and owners manage pitches, which removes double bookings.</p>
+            <ul class="tech">
+              <li>React</li><li>Node.js</li><li>Django</li><li>SQL / NoSQL</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Personal: Digi Draft -->
-          <article class="quest-card personal" data-filter="personal">
-            <div class="quest-header">
-              <span class="quest-type">PERSONAL</span>
-              <span class="quest-local">💾 LOCAL</span>
-            </div>
-            <h3 class="quest-title">Digi Draft — Corporate Portal</h3>
-            <p class="quest-desc">A professional corporate agency website designed for client engagement and brand presentation. Production-ready responsive layout.</p>
-            <ul class="quest-stack">
+          <article class="project" data-category="personal">
+            <p class="project-tag">Personal</p>
+            <h3>Digi Draft corporate website</h3>
+            <p>A responsive website for a digital agency, designed to present the brand and attract clients.</p>
+            <ul class="tech">
               <li>Next.js</li><li>Tailwind CSS</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Personal: Daraz Clone -->
-          <article class="quest-card personal" data-filter="personal">
-            <div class="quest-header">
-              <span class="quest-type">PERSONAL</span>
-              <span class="quest-local">💾 LOCAL</span>
-            </div>
-            <h3 class="quest-title">Daraz Clone Application</h3>
-            <p class="quest-desc">An e-commerce clone replicating key user flows and UI components of the Daraz marketplace. Responsive product feeds.</p>
-            <ul class="quest-stack">
+          <article class="project" data-category="personal">
+            <p class="project-tag">Personal</p>
+            <h3>Daraz marketplace clone</h3>
+            <p>A practice project that recreates the main shopping flows and screens of the Daraz marketplace, with responsive product listings.</p>
+            <ul class="tech">
               <li>Next.js</li><li>TypeScript</li><li>JavaScript</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <!-- Personal: News Web App -->
-          <article class="quest-card personal" data-filter="personal">
-            <div class="quest-header">
-              <span class="quest-type">PERSONAL</span>
-              <span class="quest-local">💾 LOCAL</span>
-            </div>
-            <h3 class="quest-title">Multi-Category News Web App</h3>
-            <p class="quest-desc">A dynamic news aggregator platform consuming third-party REST APIs to display live news feeds (sports, technology, politics).</p>
-            <ul class="quest-stack">
-              <li>React</li><li>Bootstrap</li><li>Node.js API</li>
+          <article class="project" data-category="personal">
+            <p class="project-tag">Personal</p>
+            <h3>Multi-category news app</h3>
+            <p>Shows live news from third-party APIs, grouped into sports, technology and politics.</p>
+            <ul class="tech">
+              <li>React</li><li>Bootstrap</li><li>Node.js</li>
             </ul>
-            <div class="quest-links">
-              <a href="#" class="btn-pixel small disabled">LIVE SITE</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="btn-pixel small">GITHUB</a>
+            <div class="project-links">
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- SKILL TREE -->
-    <section class="section" id="skills">
-      <div class="wrap">
-        <h2 class="section-title"><span class="icon">🌳</span> Skill Tree</h2>
-        <p class="section-sub">Unlocked attributes and proficiencies.</p>
+    <!-- Skills -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+        <p class="section-intro">Tools and technologies I work with.</p>
 
-        <div class="skill-categories">
-          <div class="skill-category">
-            <h3>⚔️ Backend</h3>
-            <div class="skill-nodes">
-              <span class="skill-node">Django</span>
-              <span class="skill-node">Node.js</span>
-              <span class="skill-node">REST APIs</span>
-              <span class="skill-node">WebSockets</span>
-              <span class="skill-node">Microservices</span>
-              <span class="skill-node">Event-driven</span>
-              <span class="skill-node">JWT Auth</span>
-              <span class="skill-node">RBAC</span>
-              <span class="skill-node">OAuth</span>
-              <span class="skill-node">2FA</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>🛡️ Frontend</h3>
-            <div class="skill-nodes">
-              <span class="skill-node">React</span>
-              <span class="skill-node">Next.js</span>
-              <span class="skill-node">TypeScript</span>
-              <span class="skill-node">Tailwind CSS</span>
-              <span class="skill-node">Reactive UI</span>
-              <span class="skill-node">SSR</span>
-              <span class="skill-node">State Mgmt</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>🗄️ Databases</h3>
-            <div class="skill-nodes">
-              <span class="skill-node">PostgreSQL</span>
-              <span class="skill-node">MySQL</span>
-              <span class="skill-node">MS SQL Server</span>
-              <span class="skill-node">SQLite</span>
-              <span class="skill-node">Relational Design</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>⚙️ DevOps &amp; Tools</h3>
-            <div class="skill-nodes">
-              <span class="skill-node">Docker</span>
-              <span class="skill-node">NGINX</span>
-              <span class="skill-node">Linux</span>
-              <span class="skill-node">Git</span>
-              <span class="skill-node">GitHub</span>
-              <span class="skill-node">VS Code</span>
-              <span class="skill-node">PyCharm</span>
-              <span class="skill-node">Jupyter</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS / EXPERIENCE -->
-    <section class="section" id="achievements">
-      <div class="wrap">
-        <h2 class="section-title"><span class="icon">🏆</span> Achievements</h2>
-        <p class="section-sub">Professional experience and unlocked milestones.</p>
-
-        <div class="achievement-grid">
-          <article class="achievement-card">
-            <div class="ach-badge">ING SKILL</div>
-            <h3>Software Engineer</h3>
-            <p class="ach-company">ING Skill Academy, Nepal</p>
-            <p class="ach-date">Nov 2024 — Present</p>
-            <ul class="ach-details">
-              <li>Designed 4-layer architecture: Hardware → Communication → Backend → Frontend</li>
-              <li>Integrated ESP32, RFID, GPS, and GSM modules</li>
-              <li>Real-time tracking via WebSockets (5-second updates to multiple clients)</li>
-              <li>Replaced Raspberry Pi with ESP32 — reduced cost, improved reliability</li>
-              <li>Built Bus Attendance System with live location tracking</li>
-              <li>Developed Dynamic QR Ticketing System with real-time validation</li>
-              <li>Engineered secure backend APIs with JWT, RBAC, and optimized queries</li>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul>
+              <li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Server-side rendering</li><li>State management</li>
             </ul>
-          </article>
-
-          <article class="achievement-card">
-            <div class="ach-badge">MERCY TECH</div>
-            <h3>Frontend Developer</h3>
-            <p class="ach-company">Mercy Technology, Nepal</p>
-            <p class="ach-date">Aug 2024 — Oct 2024</p>
-            <ul class="ach-details">
-              <li>Built responsive, high-performance web interfaces with React</li>
-              <li>Implemented real-time data updates and async state management</li>
-              <li>Optimized application load times and rendering performance</li>
-              <li>Secure client-side authentication with JWT and route protection</li>
-              <li>Agile collaboration, code reviews, and component testing</li>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js</li><li>Django</li><li>REST APIs</li><li>WebSockets</li><li>Microservices</li><li>Event-driven design</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LORE / EDUCATION -->
-    <section class="section" id="lore">
-      <div class="wrap">
-        <h2 class="section-title"><span class="icon">📜</span> Lore</h2>
-        <p class="section-sub">Origin story and academic credentials.</p>
-
-        <div class="lore-timeline">
-          <div class="lore-item">
-            <time>Apr 2022 – Jan 2025</time>
-            <h3>BSc (Hons) Computing</h3>
-            <p>Herald College Kathmandu (University of Wolverhampton)<br>Naxal Bhagawati Marg, Kathmandu</p>
+          </div>
+          <div class="skill-group">
+            <h3>Security</h3>
+            <ul>
+              <li>JWT authentication</li><li>Role-based access (RBAC)</li><li>OAuth</li><li>Two-factor authentication</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Databases</h3>
+            <ul>
+              <li>PostgreSQL</li><li>MySQL</li><li>MS SQL Server</li><li>SQLite</li><li>Relational design</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Tools and DevOps</h3>
+            <ul>
+              <li>Docker</li><li>NGINX</li><li>Linux</li><li>Git and GitHub</li><li>VS Code</li><li>PyCharm</li><li>Jupyter</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SUMMON / CONTACT -->
-    <section class="section summon" id="summon">
-      <div class="wrap summon-box">
-        <h2 class="section-title"><span class="icon">📞</span> Summon Party</h2>
-        <p class="summon-desc">Ready to join forces on your next project? Send a message to the party leader.</p>
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 id="experience-title">Experience</h2>
 
-        <div class="contact-grid">
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <a href="mailto:khadkasubin78@gmail.com" class="contact-value">khadkasubin78@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Mobile</span>
-            <a href="tel:+9779869580220" class="contact-value">+977-9869580220</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Kathmandu, Nepal</span>
-          </div>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <h3>Software Engineer</h3>
+              <p class="timeline-date">Nov 2024 – Present</p>
+            </div>
+            <p class="timeline-org">ING Skill Academy, Nepal</p>
+            <ul class="bullets">
+              <li>Designed a four-layer system: hardware, communication, backend and frontend.</li>
+              <li>Connected ESP32, RFID, GPS and GSM modules to the backend.</li>
+              <li>Built real-time tracking with WebSockets, sending updates to many clients every 5 seconds.</li>
+              <li>Replaced a Raspberry Pi with an ESP32, which cut cost and improved reliability.</li>
+              <li>Built a bus attendance system with live location tracking.</li>
+              <li>Built a QR ticketing system that validates tickets in real time.</li>
+              <li>Created secure backend APIs with JWT, role-based access and optimized queries.</li>
+            </ul>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <h3>Frontend Developer</h3>
+              <p class="timeline-date">Aug 2024 – Oct 2024</p>
+            </div>
+            <p class="timeline-org">Mercy Technology, Nepal</p>
+            <ul class="bullets">
+              <li>Built fast, responsive interfaces with React.</li>
+              <li>Added real-time data updates and managed asynchronous state.</li>
+              <li>Improved page load times and rendering performance.</li>
+              <li>Implemented JWT login and protected routes on the client.</li>
+              <li>Worked in an agile team, with code reviews and component tests.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section section-alt" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <h2 id="education-title">Education</h2>
+        <div class="education">
+          <h3>BSc (Hons) Computing</h3>
+          <p class="timeline-org">Herald College Kathmandu, University of Wolverhampton</p>
+          <p class="timeline-date">Apr 2022 – Jan 2025</p>
         </div>
+      </div>
+    </section>
 
-        <div class="social-links">
-          <a href="https://github.com/subink-7" target="_blank" rel="noopener" class="social-btn">🐙 GitHub</a>
-          <a href="https://www.linkedin.com/in/subin-khadka-675b52237/" target="_blank" rel="noopener" class="social-btn">💼 LinkedIn</a>
-        </div>
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="section-intro">I’m open to new roles and projects. Email is the fastest way to reach me.</p>
 
-        <a href="SUBIN%20KHADKA.CV%20.pdf" download class="btn-pixel btn-primary mt-large">DOWNLOAD CV — SUBIN KHADKA</a>
+        <dl class="contact-list">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:khadkasubin78@gmail.com">khadkasubin78@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+9779869580220">+977 9869580220</a></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Kathmandu, Nepal</dd>
+          </div>
+          <div>
+            <dt>Profiles</dt>
+            <dd>
+              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <a href="https://www.linkedin.com/in/subin-khadka-675b52237/" target="_blank" rel="noopener">LinkedIn</a>
+            </dd>
+          </div>
+        </dl>
+
+        <a class="btn btn-primary" href="SUBIN%20KHADKA.CV%20.pdf" download>Download CV</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <p>© 2026 Subin Khadka. Built with vanilla HTML, CSS & JS. Pixel-art RPG portfolio.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Subin Khadka</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 
