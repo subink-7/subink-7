@@ -42,11 +42,7 @@
 
 ---
 
-### 📊 GitHub Stats
-<p align="left">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=subink-7&show_icons=true&hide_border=true&count_private=true" alt="GitHub stats" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=subink-7&layout=compact&hide_border=true" alt="Top languages" />
-</p>
+
 
 ---
 
