@@ -1,153 +1,76 @@
-/* ============================================================
-   Subin's Dev Quest — Retro Pixel Portfolio
-   Game mechanics: XP bar, sound system, quest filters, nav
-   ============================================================ */
-
-(function(){
+(function () {
   'use strict';
 
-  // ---------- Audio context (user gesture required) ----------
-  let audioCtx = null;
-  let soundEnabled = true;
-  const muteBtn = document.getElementById('muteBtn');
-  const muteStatus = document.getElementById('muteStatus');
-  const audioOverlay = document.getElementById('audioOverlay');
+  // ----- Mobile menu -----
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('siteNav');
 
-  function initAudio(){
-    if(!audioCtx){
-      const Ctx = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new Ctx();
-    }
-    if(audioCtx.state === 'suspended'){
-      audioCtx.resume();
-    }
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
   }
 
-  function playTone(type, freq, duration, vol = 0.08){
-    if(!soundEnabled || !audioCtx) return;
-    const t = audioCtx.currentTime;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, t);
-    gain.gain.setValueAtTime(vol, t);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + duration);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start(t);
-    osc.stop(t + duration);
-  }
-
-  function playHover(){ playTone('square', 400, 0.05, 0.03); }
-  function playClick(){ playTone('square', 600, 0.08, 0.06); }
-  function playLevelUp(){
-    playTone('square', 520, 0.1);
-    setTimeout(()=> playTone('square', 780, 0.15), 80);
-    setTimeout(()=> playTone('square', 1040, 0.25), 160);
-  }
-
-  // Mute toggle
-  muteBtn.addEventListener('click', ()=>{
-    soundEnabled = !soundEnabled;
-    muteBtn.classList.toggle('muted', !soundEnabled);
-    muteBtn.textContent = soundEnabled ? '🔊' : '🔇';
-    muteStatus.textContent = soundEnabled ? '🔊' : '🔇';
-    playClick();
+  toggle.addEventListener('click', function () {
+    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
   });
 
-  // Boot overlay: wait for any key then remove
-  document.addEventListener('keydown', ()=>{
-    initAudio();
-    audioOverlay.classList.add('hidden');
-    playClick();
-  }, {once: true});
-
-  // ---------- Hover sound on interactive elements ----------
-  document.addEventListener('mouseover', (e)=>{
-    if(!soundEnabled) return;
-    const target = e.target;
-    if(target.matches('a, button, .filter-btn, .btn-pixel, .mute-btn, .social-btn')){
-      playHover();
-    }
-  }, true);
-
-  // ---------- Smooth scroll for anchor links ----------
-  document.querySelectorAll('a[href^="#"]').forEach(link=>{
-    link.addEventListener('click', (e)=>{
-      const href = link.getAttribute('href');
-      if(href.length > 1 && document.querySelector(href)){
-        e.preventDefault();
-        playClick();
-        document.querySelector(href).scrollIntoView({behavior:'smooth'});
-      }
-    });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
   });
 
-  // ---------- XP bar on scroll ----------
-  const xpFill = document.getElementById('xpFill');
-  const xpText = document.getElementById('xpText');
-  const charLevel = document.getElementById('charLevel');
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
 
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  let lastLevel = 1;
+  // ----- Header border after scrolling -----
+  const header = document.getElementById('siteHeader');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  function updateXP(){
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollPct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
-    xpFill.style.width = scrollPct + '%';
-    xpText.textContent = `LEVEL ${lastLevel} — ${Math.round(scrollPct)}%`;
+  // ----- Highlight the nav link of the section in view -----
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  const sections = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
 
-    // Level thresholds for flavor
-    const level = Math.floor(scrollPct / 25) + 1;
-    if(level !== lastLevel && level <= 4){
-      lastLevel = level;
-      charLevel.textContent = level;
-      playLevelUp();
-    }
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (a) {
+          const active = a.getAttribute('href') === '#' + entry.target.id;
+          a.classList.toggle('active', active);
+          if (active) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(function (s) { observer.observe(s); });
   }
 
-  window.addEventListener('scroll', updateXP, {passive:true});
-  window.addEventListener('load', updateXP);
+  // ----- Project filter -----
+  const filterButtons = document.querySelectorAll('.filter');
+  const projects = document.querySelectorAll('.project');
 
-  // ---------- Quest filter buttons ----------
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const questCards = document.querySelectorAll('.quest-card');
+  filterButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const filter = btn.dataset.filter;
 
-  filterBtns.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      playClick();
-      filterBtns.forEach(b=> b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      questCards.forEach(card=>{
-        if(filter === 'all' || card.getAttribute('data-filter') === filter){
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      filterButtons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+
+      projects.forEach(function (card) {
+        card.hidden = !(filter === 'all' || card.dataset.category === filter);
       });
     });
   });
 
-  // ---------- Header scroll effect ----------
-  const header = document.getElementById('header');
-  let lastScroll = 0;
-  window.addEventListener('scroll', ()=>{
-    const st = window.pageYOffset;
-    if(st > 100){
-      header.style.borderBottomWidth = '4px';
-    } else {
-      header.style.borderBottomWidth = '3px';
-    }
-    lastScroll = st;
-  }, {passive:true});
-
-  // ---------- Disable placeholder links (no console spam) ----------
-  document.querySelectorAll('a[href="#"].disabled, .btn-pixel.disabled').forEach(el=>{
-    el.addEventListener('click', (e)=> e.preventDefault());
-  });
-
-  // Reveal audio overlay initially
-  audioOverlay.classList.remove('hidden');
-
+  // ----- Footer year -----
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 })();
