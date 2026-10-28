@@ -52,9 +52,10 @@
     sections.forEach(function (s) { observer.observe(s); });
   }
 
-  // ----- Project filter -----
+  // ----- Project filter (office-work rows + project cards) -----
   const filterButtons = document.querySelectorAll('.filter');
-  const projects = document.querySelectorAll('.project');
+  const items = document.querySelectorAll('.project, .case');
+  const groups = document.querySelectorAll('.group');
 
   filterButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -64,8 +65,13 @@
         b.setAttribute('aria-pressed', String(b === btn));
       });
 
-      projects.forEach(function (card) {
-        card.hidden = !(filter === 'all' || card.dataset.category === filter);
+      items.forEach(function (item) {
+        item.hidden = !(filter === 'all' || item.dataset.category === filter);
+      });
+
+      // Hide a group's heading when everything inside it is hidden
+      groups.forEach(function (group) {
+        group.hidden = !group.querySelector('.project:not([hidden]), .case:not([hidden])');
       });
     });
   });
