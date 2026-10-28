@@ -225,6 +225,7 @@ a:hover { color: var(--accent-dark); }
   align-items: center;
   padding: 3rem 0;
 }
+.case[hidden] { display: none; }
 .case + .case { border-top: 1px solid var(--line); }
 .case:nth-child(even) .case-figure { order: -1; }
 
