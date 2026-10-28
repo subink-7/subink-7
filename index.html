@@ -65,109 +65,348 @@
 
         <div class="filters" role="group" aria-label="Filter projects">
           <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="filter" data-filter="work" aria-pressed="false">Work</button>
+          <button type="button" class="filter" data-filter="work" aria-pressed="false">Office work</button>
           <button type="button" class="filter" data-filter="personal" aria-pressed="false">Personal</button>
         </div>
 
-        <div class="project-grid" id="projectGrid">
+        <!-- ================= OFFICE WORK ================= -->
+        <div class="group" data-group="work">
+          <div class="group-head">
+            <p class="eyebrow">Office work</p>
+            <h3 class="group-title">Behind the interface.</h3>
+            <p class="group-intro">A few systems I’ve worked on, and the decisions behind the details.</p>
+          </div>
 
-          <article class="project" data-category="work">
-            <p class="project-tag">Work</p>
-            <h3>InTalent: hiring and talent platform</h3>
-            <p>Nepal’s first assessment-based hiring platform. Employers create skill tests, certificates are tracked automatically, and a job board matches verified candidates with employers.</p>
-            <ul class="tech">
-              <li>Node.js</li><li>React</li><li>PostgreSQL</li><li>JWT</li><li>RBAC</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://intalentnepal.com/" target="_blank" rel="noopener">Visit live site</a>
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+          <div class="case-list">
 
-          <article class="project" data-category="work">
-            <p class="project-tag">Work</p>
-            <h3>Bus attendance and QR ticketing system</h3>
-            <p>Tracks buses in real time and records attendance automatically. Hardware (ESP32, RFID, GPS, GSM) sends data to a Node.js backend, and the web app updates every 5 seconds. Includes QR tickets that are checked instantly.</p>
-            <ul class="tech">
-              <li>ESP32</li><li>WebSockets</li><li>Node.js</li><li>JWT</li><li>RBAC</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+            <!-- 01 inTalent -->
+            <article class="case">
+              <div class="case-body">
+                <p class="case-index">/01</p>
+                <p class="case-meta">Recruitment &amp; certification · Backend engineering</p>
+                <h3>inTalent</h3>
+                <p>A hiring and certification platform where identity, enrollment, assessment, and job applications cross service boundaries. One of my largest backend projects.</p>
+                <ul class="tech">
+                  <li>Python</li><li>Django / DRF</li><li>PostgreSQL</li><li>Redis</li><li>JWT / JWKS</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://intalentnepal.com/" target="_blank" rel="noopener">Visit inTalent</a>
+                  <a href="notes/intalent.html">Read the engineering notes</a>
+                </div>
+              </div>
 
-          <article class="project" data-category="work">
-            <p class="project-tag">Work</p>
-            <h3>Event tracking system</h3>
-            <p>A web app for tracking events and sending notifications about upcoming ones.</p>
-            <ul class="tech">
-              <li>React</li><li>Node.js</li><li>WebSockets</li><li>REST APIs</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+              <figure class="case-figure">
+                <svg viewBox="0 0 480 300" role="img" aria-labelledby="fig1-title">
+                  <title id="fig1-title">inTalent service boundaries: an identity service issues signed tokens, and the certification and jobs services verify them with public keys. Both publish to a notification queue.</title>
+                  <defs>
+                    <marker id="ar1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="fig-arrow" d="M0 0L8 4L0 8z"/></marker>
+                  </defs>
 
-          <article class="project" data-category="personal">
-            <p class="project-tag">Personal</p>
-            <h3>Thrift store e-commerce site</h3>
-            <p>An online shop for a curated fashion thrift store, with product browsing and checkout.</p>
-            <ul class="tech">
-              <li>Next.js</li><li>Tailwind CSS</li><li>Node.js</li><li>Wix API</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+                  <rect class="fig-box fig-accent" x="120" y="14" width="240" height="60" rx="10"/>
+                  <text class="fig-t" x="240" y="41" text-anchor="middle">Identity / Auth</text>
+                  <text class="fig-s" x="240" y="60" text-anchor="middle">Signed tokens · public JWKS</text>
 
-          <article class="project" data-category="personal">
-            <p class="project-tag">Personal</p>
-            <h3>Futsal booking system</h3>
-            <p>My final-year university project. Players book futsal courts online and owners manage pitches, which removes double bookings.</p>
-            <ul class="tech">
-              <li>React</li><li>Node.js</li><li>Django</li><li>SQL / NoSQL</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+                  <path class="fig-line" d="M240 74 V104 H125 V134" marker-end="url(#ar1)"/>
+                  <path class="fig-line" d="M240 74 V104 H355 V134" marker-end="url(#ar1)"/>
 
-          <article class="project" data-category="personal">
-            <p class="project-tag">Personal</p>
-            <h3>Digi Draft corporate website</h3>
-            <p>A responsive website for a digital agency, designed to present the brand and attract clients.</p>
-            <ul class="tech">
-              <li>Next.js</li><li>Tailwind CSS</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+                  <rect class="fig-box" x="30" y="136" width="190" height="66" rx="10"/>
+                  <text class="fig-t" x="125" y="164" text-anchor="middle">Certification</text>
+                  <text class="fig-s" x="125" y="184" text-anchor="middle">Enrollment · assessment</text>
 
-          <article class="project" data-category="personal">
-            <p class="project-tag">Personal</p>
-            <h3>Daraz marketplace clone</h3>
-            <p>A practice project that recreates the main shopping flows and screens of the Daraz marketplace, with responsive product listings.</p>
-            <ul class="tech">
-              <li>Next.js</li><li>TypeScript</li><li>JavaScript</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+                  <rect class="fig-box" x="260" y="136" width="190" height="66" rx="10"/>
+                  <text class="fig-t" x="355" y="164" text-anchor="middle">Jobs</text>
+                  <text class="fig-s" x="355" y="184" text-anchor="middle">Applications · snapshots</text>
 
-          <article class="project" data-category="personal">
-            <p class="project-tag">Personal</p>
-            <h3>Multi-category news app</h3>
-            <p>Shows live news from third-party APIs, grouped into sports, technology and politics.</p>
-            <ul class="tech">
-              <li>React</li><li>Bootstrap</li><li>Node.js</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
+                  <path class="fig-line" d="M125 202 V236" marker-end="url(#ar1)"/>
+                  <path class="fig-line" d="M355 202 V236" marker-end="url(#ar1)"/>
 
+                  <rect class="fig-box fig-dash" x="30" y="238" width="420" height="46" rx="10"/>
+                  <text class="fig-t" x="240" y="266" text-anchor="middle">Notification queue + worker</text>
+                </svg>
+                <figcaption>
+                  <span class="fig-label">FIG. 01 — Service boundaries</span>
+                  <span class="fig-sub">Identity → workflows</span>
+                </figcaption>
+                <ul class="fig-notes">
+                  <li>One issuer. Resource services verify identity with public keys.</li>
+                  <li>Local access rules. Each service decides what a request may do.</li>
+                  <li>Shared identity. Separate responsibilities.</li>
+                </ul>
+                <p class="fig-foot">Simplified implementation schematic</p>
+              </figure>
+            </article>
+
+            <!-- 02 Survey System -->
+            <article class="case">
+              <div class="case-body">
+                <p class="case-index">/02</p>
+                <p class="case-meta">Internal platform · Historical reporting</p>
+                <h3>Survey System</h3>
+                <p>An internal survey backend covering question setup, survey rounds, invitation delivery, responses, and reporting. Admin teams manage the process; clients receive an individual survey link.</p>
+                <ul class="tech">
+                  <li>Django / DRF</li><li>PostgreSQL</li><li>Redis</li><li>Celery</li>
+                </ul>
+                <div class="project-links">
+                  <a href="notes/survey-system.html">Read the engineering notes</a>
+                </div>
+              </div>
+
+              <figure class="case-figure">
+                <svg viewBox="0 0 480 280" role="img" aria-labelledby="fig2-title">
+                  <title id="fig2-title">Survey flow: a question template is copied into a snapshot for each survey round. Invitations are sent through a Celery queue, clients answer through an individual link, and responses feed reports.</title>
+                  <defs>
+                    <marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="fig-arrow" d="M0 0L8 4L0 8z"/></marker>
+                  </defs>
+
+                  <rect class="fig-box" x="10" y="96" width="130" height="64" rx="10"/>
+                  <text class="fig-t" x="75" y="124" text-anchor="middle">Template</text>
+                  <text class="fig-s" x="75" y="144" text-anchor="middle">Question setup</text>
+
+                  <rect class="fig-box fig-ghost" x="191" y="80" width="130" height="64" rx="10"/>
+                  <rect class="fig-box fig-ghost" x="183" y="88" width="130" height="64" rx="10"/>
+                  <rect class="fig-box fig-accent" x="175" y="96" width="130" height="64" rx="10"/>
+                  <text class="fig-t" x="240" y="124" text-anchor="middle">Snapshot</text>
+                  <text class="fig-s" x="240" y="144" text-anchor="middle">Per survey round</text>
+
+                  <rect class="fig-box" x="340" y="96" width="130" height="64" rx="10"/>
+                  <text class="fig-t" x="405" y="124" text-anchor="middle">Response</text>
+                  <text class="fig-s" x="405" y="144" text-anchor="middle">+ report</text>
+
+                  <path class="fig-line" d="M140 128 H173" marker-end="url(#ar2)"/>
+                  <path class="fig-line" d="M305 128 H338" marker-end="url(#ar2)"/>
+
+                  <rect class="fig-box fig-dash" x="175" y="214" width="130" height="50" rx="10"/>
+                  <text class="fig-t" x="240" y="235" text-anchor="middle">Invitations</text>
+                  <text class="fig-s" x="240" y="253" text-anchor="middle">Celery queue</text>
+                  <path class="fig-line" d="M240 214 V162" marker-end="url(#ar2)"/>
+
+                  <rect class="fig-box fig-dash" x="340" y="214" width="130" height="50" rx="10"/>
+                  <text class="fig-t" x="405" y="235" text-anchor="middle">Client link</text>
+                  <text class="fig-s" x="405" y="253" text-anchor="middle">One per person</text>
+                  <path class="fig-line" d="M405 214 V162" marker-end="url(#ar2)"/>
+                </svg>
+                <figcaption>
+                  <span class="fig-label">FIG. 02 — Survey rounds</span>
+                  <span class="fig-sub">Template → snapshot → report</span>
+                </figcaption>
+                <ul class="fig-notes">
+                  <li>Questions preserved for each round.</li>
+                </ul>
+                <p class="fig-foot">Simplified architecture schematic</p>
+              </figure>
+            </article>
+
+            <!-- 03 Bus Attendance -->
+            <article class="case">
+              <div class="case-body">
+                <p class="case-index">/03</p>
+                <p class="case-meta">Device integration · Real-time updates</p>
+                <h3>Bus Attendance System</h3>
+                <p>The backend between an RFID tap on a bus and the attendance and location views used by school teams and parents.</p>
+                <ul class="tech">
+                  <li>Django / DRF</li><li>MQTT / MessagePack</li><li>Django Channels</li><li>PostgreSQL</li>
+                </ul>
+                <div class="project-links">
+                  <a href="notes/bus-attendance.html">Read the engineering notes</a>
+                </div>
+              </div>
+
+              <figure class="case-figure">
+                <svg viewBox="0 0 480 294" role="img" aria-labelledby="fig3-title">
+                  <title id="fig3-title">Bus system map in four layers: hardware (ESP32, RFID, GPS), ingestion (MQTT, MessagePack), backend (trips and attendance), and delivery to school, bus and parent views.</title>
+                  <defs>
+                    <marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path class="fig-arrow" d="M0 0L8 4L0 8z"/></marker>
+                  </defs>
+
+                  <rect class="fig-box" x="30" y="14" width="420" height="56" rx="10"/>
+                  <circle class="fig-dot" cx="62" cy="42" r="14"/><text class="fig-n" x="62" y="47" text-anchor="middle">01</text>
+                  <text class="fig-t" x="90" y="38">Hardware</text>
+                  <text class="fig-s" x="90" y="57">ESP32 · RFID · GPS</text>
+
+                  <path class="fig-line" d="M62 70 V82" marker-end="url(#ar3)"/>
+
+                  <rect class="fig-box" x="30" y="84" width="420" height="56" rx="10"/>
+                  <circle class="fig-dot" cx="62" cy="112" r="14"/><text class="fig-n" x="62" y="117" text-anchor="middle">02</text>
+                  <text class="fig-t" x="90" y="108">Ingestion</text>
+                  <text class="fig-s" x="90" y="127">MQTT · MessagePack</text>
+
+                  <path class="fig-line" d="M62 140 V152" marker-end="url(#ar3)"/>
+
+                  <rect class="fig-box fig-accent" x="30" y="154" width="420" height="56" rx="10"/>
+                  <circle class="fig-dot" cx="62" cy="182" r="14"/><text class="fig-n" x="62" y="187" text-anchor="middle">03</text>
+                  <text class="fig-t" x="90" y="178">Backend</text>
+                  <text class="fig-s" x="90" y="197">Trips &amp; attendance</text>
+
+                  <path class="fig-line" d="M62 210 V222" marker-end="url(#ar3)"/>
+
+                  <rect class="fig-box" x="30" y="224" width="420" height="56" rx="10"/>
+                  <circle class="fig-dot" cx="62" cy="252" r="14"/><text class="fig-n" x="62" y="257" text-anchor="middle">04</text>
+                  <text class="fig-t" x="90" y="248">Delivery</text>
+                  <text class="fig-s" x="90" y="267">School · bus · parent</text>
+                </svg>
+                <figcaption>
+                  <span class="fig-label">FIG. 03 — System map</span>
+                  <span class="fig-sub">Tap → trip → parent</span>
+                </figcaption>
+                <ul class="fig-notes">
+                  <li>Four layers. One connected journey.</li>
+                </ul>
+                <p class="fig-foot">Simplified architecture schematic</p>
+              </figure>
+            </article>
+
+            <!-- 04 Attendance System -->
+            <article class="case">
+              <div class="case-body">
+                <p class="case-index">/04</p>
+                <p class="case-meta">Workflows · Department-level access</p>
+                <h3>Attendance System</h3>
+                <p>An administrative attendance backend that handles the exceptions as well as the daily clock-in: breaks, corrections, travel requests, and approval steps.</p>
+                <ul class="tech">
+                  <li>Django / DRF</li><li>PostgreSQL</li><li>Role-based access</li><li>Spreadsheet exports</li>
+                </ul>
+                <div class="project-links">
+                  <a href="notes/attendance-system.html">Read the engineering notes</a>
+                </div>
+              </div>
+
+              <figure class="case-figure">
+                <svg viewBox="0 0 480 290" role="img" aria-labelledby="fig4-title">
+                  <title id="fig4-title">Attendance workflow: daily clock-in leads to breaks, corrections and travel requests, which go through department approval and end in spreadsheet exports.</title>
+                  <defs>
+                    <marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="fig-arrow" d="M0 0L8 4L0 8z"/></marker>
+                  </defs>
+
+                  <rect class="fig-box" x="8" y="118" width="104" height="60" rx="10"/>
+                  <text class="fig-t" x="60" y="144" text-anchor="middle">Clock-in</text>
+                  <text class="fig-s" x="60" y="162" text-anchor="middle">Daily record</text>
+
+                  <path class="fig-line" d="M112 148 H146 V54 H178" marker-end="url(#ar4)"/>
+                  <path class="fig-line" d="M112 148 H178" marker-end="url(#ar4)"/>
+                  <path class="fig-line" d="M112 148 H146 V242 H178" marker-end="url(#ar4)"/>
+
+                  <rect class="fig-box" x="180" y="30" width="120" height="48" rx="10"/>
+                  <text class="fig-t" x="240" y="51" text-anchor="middle">Breaks</text>
+                  <text class="fig-s" x="240" y="68" text-anchor="middle">Start · end</text>
+
+                  <rect class="fig-box" x="180" y="124" width="120" height="48" rx="10"/>
+                  <text class="fig-t" x="240" y="145" text-anchor="middle">Corrections</text>
+                  <text class="fig-s" x="240" y="162" text-anchor="middle">Fix a record</text>
+
+                  <rect class="fig-box" x="180" y="218" width="120" height="48" rx="10"/>
+                  <text class="fig-t" x="240" y="239" text-anchor="middle">Travel</text>
+                  <text class="fig-s" x="240" y="256" text-anchor="middle">Requests</text>
+
+                  <path class="fig-line" d="M300 54 H334 V148 H366" marker-end="url(#ar4)"/>
+                  <path class="fig-line" d="M300 148 H366" marker-end="url(#ar4)"/>
+                  <path class="fig-line" d="M300 242 H334 V148 H366" marker-end="url(#ar4)"/>
+
+                  <rect class="fig-box fig-accent" x="368" y="118" width="104" height="60" rx="10"/>
+                  <text class="fig-t" x="420" y="144" text-anchor="middle">Approval</text>
+                  <text class="fig-s" x="420" y="162" text-anchor="middle">By department</text>
+
+                  <path class="fig-line" d="M420 178 V216" marker-end="url(#ar4)"/>
+
+                  <rect class="fig-box fig-dash" x="368" y="218" width="104" height="48" rx="10"/>
+                  <text class="fig-t" x="420" y="239" text-anchor="middle">Exports</text>
+                  <text class="fig-s" x="420" y="256" text-anchor="middle">Spreadsheet</text>
+                </svg>
+                <figcaption>
+                  <span class="fig-label">FIG. 04 — Approval flow</span>
+                  <span class="fig-sub">Exceptions → approval → export</span>
+                </figcaption>
+                <p class="fig-foot">Simplified workflow schematic</p>
+              </figure>
+            </article>
+
+          </div>
+
+          <!-- Other office work -->
+          <div class="project-grid more-work">
+            <article class="project" data-category="work">
+              <p class="project-tag">Office work</p>
+              <h3>Event tracking system</h3>
+              <p>A web app for tracking events and sending notifications about upcoming ones.</p>
+              <ul class="tech">
+                <li>React</li><li>Node.js</li><li>WebSockets</li><li>REST APIs</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ================= PERSONAL ================= -->
+        <div class="group" data-group="personal">
+          <div class="group-head">
+            <p class="eyebrow">Personal</p>
+            <h3 class="group-title">Built on my own time.</h3>
+          </div>
+
+          <div class="project-grid" id="projectGrid">
+
+            <article class="project" data-category="personal">
+              <p class="project-tag">Personal</p>
+              <h3>Thrift store e-commerce site</h3>
+              <p>An online shop for a curated fashion thrift store, with product browsing and checkout.</p>
+              <ul class="tech">
+                <li>Next.js</li><li>Tailwind CSS</li><li>Node.js</li><li>Wix API</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project" data-category="personal">
+              <p class="project-tag">Personal</p>
+              <h3>Futsal booking system</h3>
+              <p>My final-year university project. Players book futsal courts online and owners manage pitches, which removes double bookings.</p>
+              <ul class="tech">
+                <li>React</li><li>Node.js</li><li>Django</li><li>SQL / NoSQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project" data-category="personal">
+              <p class="project-tag">Personal</p>
+              <h3>Digi Draft corporate website</h3>
+              <p>A responsive website for a digital agency, designed to present the brand and attract clients.</p>
+              <ul class="tech">
+                <li>Next.js</li><li>Tailwind CSS</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project" data-category="personal">
+              <p class="project-tag">Personal</p>
+              <h3>Daraz marketplace clone</h3>
+              <p>A practice project that recreates the main shopping flows and screens of the Daraz marketplace, with responsive product listings.</p>
+              <ul class="tech">
+                <li>Next.js</li><li>TypeScript</li><li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project" data-category="personal">
+              <p class="project-tag">Personal</p>
+              <h3>Multi-category news app</h3>
+              <p>Shows live news from third-party APIs, grouped into sports, technology and politics.</p>
+              <ul class="tech">
+                <li>React</li><li>Bootstrap</li><li>Node.js</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/subink-7" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </section>
@@ -188,13 +427,13 @@
           <div class="skill-group">
             <h3>Backend</h3>
             <ul>
-              <li>Node.js</li><li>Django</li><li>REST APIs</li><li>WebSockets</li><li>Microservices</li><li>Event-driven design</li>
+              <li>Python</li><li>Django / DRF</li><li>Node.js</li><li>REST APIs</li><li>WebSockets / Django Channels</li><li>Celery and Redis</li><li>MQTT</li><li>Microservices</li><li>Event-driven design</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Security</h3>
             <ul>
-              <li>JWT authentication</li><li>Role-based access (RBAC)</li><li>OAuth</li><li>Two-factor authentication</li>
+              <li>JWT / JWKS authentication</li><li>Role-based access (RBAC)</li><li>OAuth</li><li>Two-factor authentication</li>
             </ul>
           </div>
           <div class="skill-group">
@@ -294,8 +533,6 @@
             </dd>
           </div>
         </dl>
-
-        
       </div>
     </section>
 
